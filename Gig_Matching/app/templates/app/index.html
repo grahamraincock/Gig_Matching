@@ -2,32 +2,62 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Django</h1>
-    <p class="lead">Django is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<style>
+    .container-home {
+        height: 400px;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+</style>
+
+<div class="container-home">
+    <div class="center-home">
+        <p><a href="{% url 'newproject' %}" class="button-home">Create Project &raquo;</a></p>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Django gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://djangobook.com/django-tutorials/">Learn more &raquo;</a></p>
+<div class="container-home">
+    <div class="center-home">
+        <p><a href="{% url 'myprojects' %}" class="button-home">My Projects &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.org/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+</div>
+
+<div class="container-home">
+    <div class="center-home">
+        <p><a href="{% url 'viewprojects' %}" class="button-home">View Projects &raquo;</a></p>
     </div>
 </div>
 
 {% endblock %}
+

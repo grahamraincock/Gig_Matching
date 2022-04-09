@@ -1,0 +1,81 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+    .container-home {
+        height: 400px;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        left: 45%;
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+    .card-header-warning {
+        background: white !important
+    }
+
+    .card {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 0.5em 0.5em 0.5em;
+        border-radius: 2em;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    .card-title {
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    .mt-0 {
+        margin-top: 50px !important;
+    }
+
+</style>
+
+<div class="center-home">
+    <div class="text-center mt-0">
+        <h1><strong>My Projects:</strong></h1>
+    </div>
+    {% for Project in all %}
+    <div class="card card-header-warning rou" style="width: 32rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ Project.ProjectName }}</h5>
+            <div class="text-center">
+                <a href="{% url 'viewapplicants' Project.ProjectID %}" class="btn btn-primary">View Applicants</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="text-center">
+        <p><a href="{% url 'home' %}" class="button-home">Back &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}
+

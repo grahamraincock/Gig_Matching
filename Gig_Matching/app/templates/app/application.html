@@ -1,0 +1,75 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .container-home {
+        height: 400px;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin-top: 20px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+
+    .mt-0 {
+        margin-top: 50px !important;
+    }
+</style>
+
+
+
+<div class="text-center mt-0">
+    <h1><strong>You have successfully applied for: {{ all.ProjectName }}</strong></h1>
+</div>
+<div class="text-center">
+    <p><a href="{% url 'home' %}" class="button-home">Home &raquo;</a></p>
+</div>
+
+{% endblock %}

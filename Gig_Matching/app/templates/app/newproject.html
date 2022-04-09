@@ -1,0 +1,76 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+    .container-home {
+        height: 400px;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin-top: 20px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+</style>
+
+<div class="container-home">
+    <div class="center-home">
+        <div class="text-center mt-0">
+            <h1><strong>Create Project:</strong></h1>
+        </div>
+        <form method="post" action="{% url 'newproject' %}">
+            <div class="mb-3">
+                <label for="ProjectName" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="ProjectName" aria-describedby="emailHelp" name="ProjectName">
+            </div>
+            <div class="mb-3">
+                <label for="ProjectDesc" class="form-label">Project Description</label>
+                <input type="text" class="form-control" id="ProjectDesc" name="ProjectDesc">
+            </div>
+            <div class="mb-3">
+                <label for="ProjectTypeID" class="form-label">Project Type</label>
+                <select id="ProjectTypeID" class="form-select" name="ProjectTypeID">
+                    <option selected>Please choose type</option>
+                    <option value="1">System Development</option>
+                    <option value="2">System Upgrade</option>
+                    <option value="3">Database Creation</option>
+                    <option value="4">Process Improvement</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="text-center">
+            <p><a href="{% url 'home' %}" class="button-home">Back &raquo;</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

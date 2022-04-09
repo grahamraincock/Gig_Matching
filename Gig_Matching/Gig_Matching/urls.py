@@ -11,6 +11,12 @@ from app import forms, views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('newproject/', views.newproject, name='newproject'),
+    path('myprojects/', views.myprojects, name='myprojects'),
+    path('viewprojects/', views.viewprojects, name='viewprojects'),
+    path('contactapp/<Account_ID>', views.contactapp, name='contactapp'),
+    path('viewapplicants/<Project_ID>', views.viewapplicants, name='viewapplicants'),
+    path('application/<Project_ID>', views.application, name='application'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('login/',

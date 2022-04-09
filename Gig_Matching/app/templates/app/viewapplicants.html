@@ -1,0 +1,208 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+    .container-home {
+        height: 15vw;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        left: 42%;
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+    .card-img-top {
+        width: 15vw;
+        height: 15vw;
+        object-fit: cover;
+    }
+    .card-header-warning {
+        background: white !important
+    }
+
+    .card {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 1em 1em 0.5em;
+        border-radius: 2em;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+
+    .mt-0 {
+        margin-top: 50px !important;
+    }
+    
+
+</style>
+
+<div class="text-center mt-0">
+    <h1><strong>{{ all.ProjectName }} Applicants:</strong></h1>
+</div>
+
+<div class="center-home">
+    {% if gate1 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant1.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant1.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant1.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant1.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    {% if gate2 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant2.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant2.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant2.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant2.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate3 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant3.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant3.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant3.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant3.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate4 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant4.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant4.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant4.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant4.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate5 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant5.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant5.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant5.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant5.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate6 %} 
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant6.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant6.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant6.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant6.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate7 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant7.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant7.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant7.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant7.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% if gate8 %}
+    <div class="card card-header-warning" style="width: 16vw">
+        <img class="card-img-top" src="{{ applicant8.AccountPhoto }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><strong>{{ applicant8.Name }}</strong></h5>
+            <p class="card-text">Skills:</p>
+            {% for Skill in applicant8.SkillID.all %}
+            <p class="card-text text-success text-center">{{ Skill.SkillName }}</p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'contactapp' applicant8.AccountID %}" class="btn btn-primary">Contact Applicant</a>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    <div class="text-center">
+        <p><a href="{% url 'home' %}" class="button-home">Back &raquo;</a></p>
+    </div>
+</div>
+    {% endblock %}

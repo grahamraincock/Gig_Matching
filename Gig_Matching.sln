@@ -5,6 +5,11 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Gig_Matching", "Gig_Matching\Gig_Matching.pyproj", "{BE0BE3D1-5619-4D7B-B04B-B89FC9E4C024}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57C926B1-DE73-421E-A533-054A1061082C}"
+	ProjectSection(SolutionItems) = preProject
+		procfile.txt = procfile.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

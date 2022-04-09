@@ -1,0 +1,62 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+    .container-home {
+        height: 400px;
+        position: relative;
+    }
+
+    .center-home {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .button-home {
+        background-color: steelblue; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin-top: 20px;
+        border-radius: 1em;
+    }
+        /* Add a background color on hover */
+        .button-home:hover {
+            background-color: royalblue;
+        }
+
+    .rounded-home {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+</style>
+
+<div class="container-home">
+    <div class="center-home">
+        <div class="text-center mt-0">
+            <h1><strong>Contact {{ Account.Name }}:</strong></h1>
+        </div>
+        <form>
+            <div class="mb-3">
+                <label for="ProjectDesc" class="form-label">Message: </label>
+                <input type="text" class="form-control" id="ProjectDesc" name="ProjectDesc">
+            </div>
+            <button href="{% url 'home' %}" type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <div class="text-center">
+            <p><a href="{% url 'home' %}" class="button-home">Back &raquo;</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
